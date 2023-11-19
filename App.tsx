@@ -7,16 +7,13 @@
 
 import React from 'react';
 import {SafeAreaView, ScrollView, StatusBar, Text, View} from 'react-native';
+import MainLayout from './android/src/layouts/MainLayout/MainLayout';
 
 function App(): JSX.Element {
   return (
     <SafeAreaView>
       <StatusBar barStyle={'dark-content'} backgroundColor={'#eee'} />
-      <View>
-        <ScrollView>
-          <Text>Hello my marketplace of flowers</Text>
-        </ScrollView>
-      </View>
+      <MainLayout></MainLayout>
     </SafeAreaView>
   );
 }
