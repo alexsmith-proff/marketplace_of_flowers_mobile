@@ -2,7 +2,7 @@ const { StyleSheet } = require("react-native");
 
 export const s = StyleSheet.create({
     wrap:{
-        width: 180,
+        width: 200,
         position: "relative",
         // backgroundColor: '#eee',
     },
@@ -16,7 +16,7 @@ export const s = StyleSheet.create({
     },
     btn: {
         position: "absolute",
-        top: 8,
+        top: 7,
         right: 7
     },
     img:{

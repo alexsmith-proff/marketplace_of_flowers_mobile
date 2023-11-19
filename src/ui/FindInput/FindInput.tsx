@@ -1,16 +1,15 @@
 import { FC } from "react";
-import { Image, TextInput, Touchable, TouchableOpacity, View } from "react-native";
+import { Image, TextInput, TouchableOpacity, View } from "react-native";
 
 import { s } from './FindInput.styles'
 
 interface FindInputProps {
-    width?: string
     placeholder: string
     value: string
     onChangeText: (text: string) => void
 }
 
-const FindInput: FC<FindInputProps> = ({ width = '100%', placeholder, value, onChangeText }) => {
+const FindInput: FC<FindInputProps> = ({ placeholder, value, onChangeText }) => {
     return (
         <View style={s.wrap}>
             <TextInput style={s.input} value={value} onChangeText={onChangeText} placeholder={placeholder} />
