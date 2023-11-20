@@ -10,8 +10,11 @@
     "test": "jest"
   },
   "dependencies": {
+    "@types/react-native-snap-carousel": "^3.8.8",
+    "axios": "^1.6.2",
     "react": "18.2.0",
     "react-native": "0.72.7",
+    "react-native-snap-carousel": "^3.9.1",
     "react-native-svg": "^14.0.0"
   },
   "devDependencies": {
