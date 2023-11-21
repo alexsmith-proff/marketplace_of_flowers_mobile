@@ -8,9 +8,8 @@
 import React, { useState, useEffect } from 'react';
 import { SafeAreaView, StatusBar, Text } from 'react-native';
 import MainLayout from './src/layouts/MainLayout/MainLayout';
-import MainSlider from './src/components/MainSlider/MainSlider';
+import MainSlider from './src/modules/MainSlider/MainSlider';
 import { GetSection } from './src/services/core/requests';
-import axios from 'axios';
 import { ISection } from './src/interfaces/section.interface';
 
 function App(): JSX.Element {
@@ -21,7 +20,6 @@ function App(): JSX.Element {
       setSliderData(slider)
     }
     fetchData()
-
   }, [])
   return (
     <SafeAreaView>

@@ -5,6 +5,7 @@ import { IMenu, IMenuItem, ISubMenu } from '../../interfaces/menu.interface';
 import { IElement, ISection } from '../../interfaces/section.interface'
 import { isJSONString } from './util';
 
+/* eslint-disable */
 // Menus
 export const getMenuItemBySlugFromMenu = (menu: IMenu, menuItemSlug: string): IMenuItem => {
     if(menu) {
@@ -48,17 +49,23 @@ export const getTextInTextBlockFromSection = (section: ISection, elementSlug: st
     return ''
 }
 
-export const getTextInTextBlockFromElement = (element: IElement, textSlug: string) => {
-    const textElement = element.text_elements.find(t_el => t_el.slug == textSlug)
+export const getTextInTextBlockFromElement = (element: IElement , textSlug: string) => {
+    const textElement = element?.text_elements.find(t_el => t_el.slug == textSlug)
     // console.log('wwwww', textElement);
     
     if (textElement){
-        if(isJSONString(textElement.text)){
-            const JSONObj = JSON.parse(textElement.text)
-            if(JSONObj.name == 'product'){
-                return element.product_ref[JSONObj.field]
-            }else return textElement.text
-        }else return textElement.text        
+        console.log('ttttttttt', textElement.text);
+        return textElement.text
+        
+    //     if(isJSONString(textElement.text)){
+    //         const JSONObj = JSON.parse(textElement.text)
+    //         console.log('JSONObjJSONObj', JSONObj);
+            
+    //         // if(JSONObj.name == 'product'){
+    //         //     // return element.product_ref[JSONObj.field]
+    //         //     return textElement.text
+    //         // }else return textElement.text
+    //     }else return textElement.text        
     }
     else return ''
 
