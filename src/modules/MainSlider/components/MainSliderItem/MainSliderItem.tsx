@@ -1,7 +1,7 @@
 /* eslint-disable */
 
 import { FC } from "react"
-import { View, Text, Image } from "react-native"
+import { View, Text, Image, TouchableOpacity } from "react-native"
 import { IElement } from "../../../../interfaces/section.interface"
 import { getTextInTextBlockFromElement } from "../../../../services/core/parse"
 
@@ -29,9 +29,11 @@ const MainSliderItem: FC<MainSliderItemProps> = ({ width, height, uri, slider })
                 <Text style={s.UnderText}>{getTextInTextBlockFromElement(slider, 'promokod-tekst')}</Text>
                 <View style={s.Promo}>
                     <Text style={s.PromoText}>{getTextInTextBlockFromElement(slider, 'tekst-vnizu')}</Text>
-                    <View style={s.PromoBtn}>
-                        <Image source={require('../../../../assets/img/promo-btn-copy.png')} width={24} height={24} />
-                    </View>
+                    <TouchableOpacity activeOpacity={0.5} >
+                        <View style={s.PromoBtn}>
+                            <Image source={require('../../../../assets/img/promo-btn-copy.png')} width={24} height={24} />
+                        </View>
+                    </TouchableOpacity>
                 </View>
             </View>
         </View>
