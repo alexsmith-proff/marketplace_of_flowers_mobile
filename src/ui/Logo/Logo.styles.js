@@ -1,8 +1,10 @@
 import { StyleSheet } from "react-native";
+/*eslint sort-keys: "error"*/
+/*eslint-env es6*/
 
 export const s = StyleSheet.create({
     img: {
-        width: 120,
-        height: 42
+        height: 42,
+        width: 120
     }
 })

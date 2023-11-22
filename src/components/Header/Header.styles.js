@@ -2,9 +2,9 @@ import { StyleSheet } from "react-native";
 
 export const s = StyleSheet.create({
     wrap:{
+        alignItems: "center",
         flexDirection: 'row',
         justifyContent: "space-between",
-        alignItems: "center",
         marginBottom: 10
     } 
 })
