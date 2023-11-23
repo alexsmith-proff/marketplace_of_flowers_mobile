@@ -4,6 +4,8 @@ import { FC } from "react"
 import { View, Text, Image, TouchableOpacity } from "react-native"
 import { IElement } from "../../../../interfaces/section.interface"
 import { getTextInTextBlockFromElement } from "../../../../services/core/parse"
+import { SERVER_URL } from "@env"
+
 
 import { s } from './MainSliderItem.styles'
 

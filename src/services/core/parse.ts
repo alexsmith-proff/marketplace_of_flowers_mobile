@@ -54,7 +54,7 @@ export const getTextInTextBlockFromElement = (element: IElement , textSlug: stri
     // console.log('wwwww', textElement);
     
     if (textElement){
-        console.log('ttttttttt', textElement.text);
+        // console.log('ttttttttt', textElement.text);
         return textElement.text
         
     //     if(isJSONString(textElement.text)){

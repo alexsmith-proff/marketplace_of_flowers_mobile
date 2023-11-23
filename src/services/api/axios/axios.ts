@@ -1,7 +1,8 @@
 import axios, { AxiosInstance } from 'axios'
+import { SERVER_URL } from "@env"
 
 const axiosInstance: AxiosInstance = axios.create({
-    baseURL: 'http://10.0.2.2:5000',
+    baseURL: SERVER_URL,
 })
 
 
