@@ -12,12 +12,6 @@ interface MainSliderProps {
     slider: ISection
 }
 
-const s = StyleSheet.create({
-    imgWrap: {
-        backgroundColor: '#eee'
-    }
-})
-
 const MainSlider: FC<MainSliderProps> = ({ slider }) => {
     const { width } = Dimensions.get("screen")
 

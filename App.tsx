@@ -6,18 +6,22 @@
  */
 
 import React, { useState, useEffect } from 'react';
-import { SafeAreaView, StatusBar, Text } from 'react-native';
+import { SafeAreaView, StatusBar, Text, View } from 'react-native';
 import MainLayout from './src/layouts/MainLayout/MainLayout';
 import MainSlider from './src/modules/MainSlider/MainSlider';
 import { GetSection } from './src/services/core/requests';
 import { ISection } from './src/interfaces/section.interface';
+import Privileges from './src/modules/Privileges/Privileges';
 
 function App(): JSX.Element {
-  const [sliderData, setSliderData] = useState<ISection | null>(null)
+  const [mainSliderData, setMainSliderData] = useState<ISection | null>(null)
+  const [privelegesSliderData, setPrivelegesSliderData] = useState<ISection | null>(null)
   useEffect(() => {
     const fetchData = async () => {
-      const slider = await GetSection('bigSlider')
-      setSliderData(slider)
+      const mainSlider = await GetSection('bigSlider')
+      const privelegesSlider = await GetSection('privilegii')
+      setMainSliderData(mainSlider)
+      setPrivelegesSliderData(privelegesSlider)
     }
     fetchData()
   }, [])
@@ -25,7 +29,10 @@ function App(): JSX.Element {
     <SafeAreaView>
       <StatusBar barStyle={'dark-content'} backgroundColor={'#eee'} />
       <MainLayout>
-        <MainSlider slider={sliderData as ISection} />
+        <View>
+          <MainSlider slider={mainSliderData as ISection} />
+          <Privileges slider={privelegesSliderData as ISection} />
+        </View>
       </MainLayout>
     </SafeAreaView>
   );
