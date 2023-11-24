@@ -24,9 +24,9 @@ const Privileges: FC<PrivilegesProps> = ({ slider }) => {
                         layout="default"
                         layoutCardOffset={0}
                         loop
-                        autoplay={true}
-                        autoplayDelay={0}
-                        autoplayInterval={8000}
+                        // autoplay={true}
+                        // autoplayDelay={0}
+                        // autoplayInterval={8000}
                         inactiveSlideOpacity={1.0}
                         inactiveSlideScale={1.0}
                         activeSlideAlignment="start"
