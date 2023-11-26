@@ -5,6 +5,7 @@ import Header from "../../components/Header/Header";
 import { IMenu } from "../../interfaces/menu.interface";
 
 import {s} from './MainLayout.styles'
+import BottomTabs from "../../components/BottomTabs/BottomTabs";
 
 const data: IMenu = {
     id: 1,
@@ -40,7 +41,7 @@ const MainLayout: FC<MainLayoutProps> = ({ children }) => {
             <ScrollView>
                 {children}
             </ScrollView>
-            <FooterMenu />
+            {/* <FooterMenu /> */}
         </View>
     )
 }
