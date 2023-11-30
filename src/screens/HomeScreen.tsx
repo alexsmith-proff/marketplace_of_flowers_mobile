@@ -8,6 +8,7 @@ import { ParamListBase, useNavigation,  } from '@react-navigation/native'
 import {NativeStackNavigationProp} from '@react-navigation/native-stack'
 import { GetSection } from '../services/core/requests';
 import { ISection } from '../interfaces/section.interface';
+import Reviews from '../modules/Reviews/Reviews';
 
 
 // interface HomeScreenProps {}
@@ -16,6 +17,7 @@ const HomeScreen: FC = ({}) => {
     const [mainSliderData, setMainSliderData] = useState<ISection | null>(null)
     const [privelegesSliderData, setPrivelegesSliderData] = useState<ISection | null>(null)
     const [mainCardData, setMainCardData] = useState<ISection | null>(null)
+    const [reviewsData, setReviewsData] = useState<ISection | null>(null)
 
     const navigation = useNavigation<NativeStackNavigationProp<ParamListBase>>()
     useEffect(() => {
@@ -23,9 +25,11 @@ const HomeScreen: FC = ({}) => {
             const mainSlider = await GetSection('bigSlider')
             const privelegesSlider = await GetSection('privilegii')
             const mainCardSlider = await GetSection('mainCard')
+            const reviewsSlider = await GetSection('reviews')
             setMainSliderData(mainSlider)
             setPrivelegesSliderData(privelegesSlider)
             setMainCardData(mainCardSlider)
+            setReviewsData(reviewsSlider)
         }
         fetchData()
     }, [])
@@ -34,14 +38,13 @@ const HomeScreen: FC = ({}) => {
             <StatusBar barStyle={'dark-content'} backgroundColor={'#eee'} />
             <MainLayout>
                 <View>
-                    {/* <ScrollView> */}
                     <MainSlider slider={mainSliderData as ISection} />
                     <Privileges slider={privelegesSliderData as ISection} />
                     <MainCards slider={mainCardData as ISection} />
-                    <TouchableOpacity onPress={() => navigation.navigate('Catalog')}>
+                    {/* <TouchableOpacity onPress={() => navigation.navigate('Catalog')}>
                         <Text>qqqqqq</Text>
-                    </TouchableOpacity>
-                    {/* </ScrollView> */}
+                    </TouchableOpacity> */}
+                    <Reviews slider={reviewsData as ISection} />
                 </View>
             </MainLayout>
         </SafeAreaView>
