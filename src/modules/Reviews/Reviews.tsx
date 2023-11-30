@@ -30,7 +30,7 @@ const Reviews: FC<ReviewsProps> = ({ slider }) => {
                         autoplayDelay={0}
                         autoplayInterval={8000}
                         inactiveSlideOpacity={1.0}
-                        inactiveSlideScale={1.0}
+                        inactiveSlideScale={0.95}
                         activeSlideAlignment="start"
                         data={slider.elements}
                         renderItem={({ item }) => <ReviewItem

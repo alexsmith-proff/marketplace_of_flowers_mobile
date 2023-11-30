@@ -38,10 +38,10 @@ const ReviewItem: FC<ReviewItemProps> = ({ star, name, text, bouquet, uri }) => 
                         <Star stars={star} />
                         <Text style={s.sliderName}>{name}</Text>
                         <Text style={s.sliderText}>{text}</Text>
+                        <Text style={s.sliderBouquet}>Отзыв к букету: <Text style={s.sliderBouquetText}>{bouquet}</Text></Text>
                     </View>
                     <View style={s.sliderRight}>
-                        <Text style={s.sliderBouquet}>Отзыв к букету: <Text style={s.sliderBouquetText}>{bouquet}</Text></Text>
-                        <Image source={{uri: uri}} />
+                        <Image style={s.img} source={{ uri: uri }} width={88} height={88} />
                     </View>
                 </View>
             </View>

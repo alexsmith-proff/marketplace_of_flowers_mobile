@@ -10,7 +10,7 @@ export const s = StyleSheet.create({
         marginBottom: 40,
         // boxSizing: 'border-box',
         // width: calc(100% - 100px);
-        height: 380
+        height: 500
     },
 
     sliderContainer: {
@@ -18,6 +18,8 @@ export const s = StyleSheet.create({
         flexDirection: 'column',
         justifyContent: 'space-between',
         // alignItems: 'center',
+        height: '100%',
+        
     },
     sliderLeft: {},
 
@@ -46,7 +48,7 @@ export const s = StyleSheet.create({
         fontSize: 16,
         lineHeight: 22,
         color: '#222A46',
-        // marginBottom: 15
+        marginBottom: 15
 
         // span {
             // color: #0093A2,
@@ -56,15 +58,26 @@ export const s = StyleSheet.create({
         fontWeight: '400',        
     },
 
-    sliderRight: {
-        // border: '2px solid #0093A2',
-        // borderRadius: 50
+    sliderRight:{
+        width: 110,
+        height: 110,
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+
+        borderWidth: 2,
+        borderStyle: 'solid',
+        borderColor: '#0093A2',
+        borderRadius: 150,
+    },
+    img: {
+        // display: 
+        // padding: 8,
 
 
         // img {
             // display: block;
 
-            // padding: 10px;
         // }
     }
 })
