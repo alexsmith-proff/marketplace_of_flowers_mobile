@@ -44,7 +44,7 @@ const HomeScreen: FC = ({}) => {
             <MainLayout>
                 <View>
                     <MainSlider slider={mainSliderData as ISection} />
-                    {/* <Privileges slider={privelegesSliderData as ISection} /> */}
+                    <Privileges slider={privelegesSliderData as ISection} />
                     {/* <MainCards slider={mainCardData as ISection} /> */}
                     {/* <TouchableOpacity onPress={() => navigation.navigate('Catalog')}>
                         <Text>qqqqqq</Text>
