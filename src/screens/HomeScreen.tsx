@@ -9,6 +9,7 @@ import {NativeStackNavigationProp} from '@react-navigation/native-stack'
 import { GetSection } from '../services/core/requests';
 import { ISection } from '../interfaces/section.interface';
 import Reviews from '../modules/Reviews/Reviews';
+import Partition from '../modules/Partition/Partition';
 
 
 // interface HomeScreenProps {}
@@ -17,6 +18,7 @@ const HomeScreen: FC = ({}) => {
     const [mainSliderData, setMainSliderData] = useState<ISection | null>(null)
     const [privelegesSliderData, setPrivelegesSliderData] = useState<ISection | null>(null)
     const [mainCardData, setMainCardData] = useState<ISection | null>(null)
+    const [partitionData, setPartitionData] = useState<ISection | null>(null)
     const [reviewsData, setReviewsData] = useState<ISection | null>(null)
 
     const navigation = useNavigation<NativeStackNavigationProp<ParamListBase>>()
@@ -25,14 +27,17 @@ const HomeScreen: FC = ({}) => {
             const mainSlider = await GetSection('bigSlider')
             const privelegesSlider = await GetSection('privilegii')
             const mainCardSlider = await GetSection('mainCard')
+            const partitionSlider = await GetSection('partition')
             const reviewsSlider = await GetSection('reviews')
             setMainSliderData(mainSlider)
             setPrivelegesSliderData(privelegesSlider)
             setMainCardData(mainCardSlider)
+            setPartitionData(partitionSlider)
             setReviewsData(reviewsSlider)
         }
         fetchData()
     }, [])
+    
     return (
         <SafeAreaView>
             <StatusBar barStyle={'dark-content'} backgroundColor={'#eee'} />
@@ -44,6 +49,7 @@ const HomeScreen: FC = ({}) => {
                     {/* <TouchableOpacity onPress={() => navigation.navigate('Catalog')}>
                         <Text>qqqqqq</Text>
                     </TouchableOpacity> */}
+                    <Partition slider={partitionData as ISection} />
                     <Reviews slider={reviewsData as ISection} />
                 </View>
             </MainLayout>
