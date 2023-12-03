@@ -43,14 +43,14 @@ const HomeScreen: FC = ({}) => {
             <StatusBar barStyle={'dark-content'} backgroundColor={'#eee'} />
             <MainLayout>
                 <View>
-                    <MainSlider slider={mainSliderData as ISection} />
-                    <Privileges slider={privelegesSliderData as ISection} />
-                    <MainCards slider={mainCardData as ISection} />
+                    {/* <MainSlider slider={mainSliderData as ISection} /> */}
+                    {/* <Privileges slider={privelegesSliderData as ISection} /> */}
+                    {/* <MainCards slider={mainCardData as ISection} /> */}
                     {/* <TouchableOpacity onPress={() => navigation.navigate('Catalog')}>
                         <Text>qqqqqq</Text>
                     </TouchableOpacity> */}
                     <Partition slider={partitionData as ISection} />
-                    <Reviews slider={reviewsData as ISection} />
+                    {/* <Reviews slider={reviewsData as ISection} /> */}
                 </View>
             </MainLayout>
         </SafeAreaView>
