@@ -17,7 +17,7 @@ interface PartitionProps {
 const Partition: FC<PartitionProps> = ({ slider }) => {
     const { width } = Dimensions.get("screen")
     return (
-        <View>
+        <View style={s.section}>
             <Text style={s.title}>Разделы</Text>
             {
                 slider ? (

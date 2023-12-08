@@ -6,6 +6,7 @@ import MainCardsItem from "../../components/MainCardsItem/MainCardsItem";
 import { SERVER_URL } from "@env";
 
 import { s } from './MainCards.styles'
+import SkeletonPlaceholder from "react-native-skeleton-placeholder";
 
 interface MainCardsProps {
     slider: ISection
@@ -32,7 +33,7 @@ const MainCards: FC<MainCardsProps> = ({ slider }) => {
         <View style={s.section}>
             <Text style={s.title}>Букеты цветов с доставкой</Text>
             {
-                slider && (
+                slider ? (
                     <Carousel
                         style={{ backgroundColor: '#aaa' }}
                         sliderWidth={width}
@@ -59,6 +60,33 @@ const MainCards: FC<MainCardsProps> = ({ slider }) => {
                             onPressAddToCart={handleAddToCart}
                         />}
                     />
+                ) : (
+                    <Carousel
+                        style={{ backgroundColor: '#aaa' }}
+                        sliderWidth={width}
+                        itemWidth={305}
+                        layout="default"
+                        layoutCardOffset={0}
+                        loop
+                        autoplay={true}
+                        autoplayDelay={0}
+                        autoplayInterval={8000}
+                        inactiveSlideOpacity={1.0}
+                        inactiveSlideScale={1.0}
+                        activeSlideAlignment="start"
+                        data={[{}, {}]}
+                        renderItem={({ item }) => <SkeletonPlaceholder>
+                            <SkeletonPlaceholder.Item>
+                                <SkeletonPlaceholder.Item width={265} height={245} marginBottom={20} borderRadius={10} />
+                                <SkeletonPlaceholder.Item width={265} height={40} marginBottom={70} />
+                                <SkeletonPlaceholder.Item paddingHorizontal={15} width={265} flexDirection="row" justifyContent="space-between">
+                                    <SkeletonPlaceholder.Item width={50} height={40} />
+                                    <SkeletonPlaceholder.Item width={120} height={40} />
+                                </SkeletonPlaceholder.Item>
+                            </SkeletonPlaceholder.Item>
+                        </SkeletonPlaceholder>}
+                    />
+
                 )
             }
         </View>

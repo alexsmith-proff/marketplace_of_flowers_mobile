@@ -7,6 +7,7 @@ import { ISection } from "../../interfaces/section.interface";
 import { s } from './Reviews.styles'
 import ReviewItem from "../../components/Reviews/ReviewItem";
 import { getFileNameInImgBlockFromElement, getTextInTextBlockFromElement } from "../../services/core/parse";
+import SkeletonPlaceholder from "react-native-skeleton-placeholder";
 
 interface ReviewsProps {
     slider: ISection
@@ -18,7 +19,7 @@ const Reviews: FC<ReviewsProps> = ({ slider }) => {
         <View style={s.section}>
             <Text style={s.title}>Отзывы наших покупателей</Text>
             {
-                slider && (
+                slider ? (
                     <Carousel
                         style={{ backgroundColor: '#aaa' }}
                         sliderWidth={width - 20}
@@ -40,6 +41,28 @@ const Reviews: FC<ReviewsProps> = ({ slider }) => {
                             bouquet={getTextInTextBlockFromElement(item, 'otzyv-k-buketu')}
                             uri={`${SERVER_URL}/${getFileNameInImgBlockFromElement(item, 'izobrazhenie')}`}
                         />}
+                    />
+                ) : (
+                    <Carousel
+                        style={{ backgroundColor: '#aaa' }}
+                        sliderWidth={width - 20}
+                        itemWidth={width - 20}
+                        layout="default"
+                        layoutCardOffset={0}
+                        loop
+                        autoplay={true}
+                        autoplayDelay={0}
+                        autoplayInterval={8000}
+                        inactiveSlideOpacity={1.0}
+                        inactiveSlideScale={0.95}
+                        activeSlideAlignment="start"
+                        data={[{}, {}]}
+                        renderItem={({ item }) => <SkeletonPlaceholder borderRadius={5}>
+                            <SkeletonPlaceholder.Item paddingHorizontal={20}>
+                                <SkeletonPlaceholder.Item width={width - 60} height={340} marginBottom={20} />
+                                <SkeletonPlaceholder.Item width={120} height={120} borderRadius={120} />
+                            </SkeletonPlaceholder.Item>
+                        </SkeletonPlaceholder>}
                     />
                 )
             }

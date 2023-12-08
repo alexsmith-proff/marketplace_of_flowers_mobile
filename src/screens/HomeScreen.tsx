@@ -45,12 +45,12 @@ const HomeScreen: FC = ({}) => {
                 <View>
                     <MainSlider slider={mainSliderData as ISection} />
                     <Privileges slider={privelegesSliderData as ISection} />
-                    {/* <MainCards slider={mainCardData as ISection} /> */}
+                    <MainCards slider={mainCardData as ISection} />
                     {/* <TouchableOpacity onPress={() => navigation.navigate('Catalog')}>
                         <Text>qqqqqq</Text>
                     </TouchableOpacity> */}
                     <Partition slider={partitionData as ISection} />
-                    {/* <Reviews slider={reviewsData as ISection} /> */}
+                    <Reviews slider={reviewsData as ISection} />
                 </View>
             </MainLayout>
         </SafeAreaView>

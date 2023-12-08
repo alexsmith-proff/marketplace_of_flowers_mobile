@@ -1,6 +1,9 @@
 const { StyleSheet } = require("react-native")
 
 export const s =StyleSheet.create({
+    section: {
+        paddingTop: 10
+    },
     title: {
         color: '#222A46',
         fontSize: 20,
